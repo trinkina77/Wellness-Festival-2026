@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wellness Фестиваль · Нюрнберг</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf5f0;
+    --warm-white: #fff9f6;
+    --sage: #c4857a;
+    --sage-light: #e8b8b0;
+    --sage-dark: #a05a52;
+    --terracotta: #d4748a;
+    --terracotta-light: #f0a8b8;
+    --gold: #d4a0a8;
+    --brown-dark: #3a2028;
+    --brown-mid: #6a3a48;
+    --brown-light: #9a7080;
+    --border: #f0d8d8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--brown-dark);
+    font-family: 'Jost', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: #2e1820;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 80px 40px 60px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 100%, #d4748a22 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 80% 20%, #f0a8b818 0%, transparent 50%),
+      radial-gradient(ellipse 60% 80% at 10% 50%, #e8b8b015 0%, transparent 60%);
+  }
+
+  /* Botanical SVG decorations */
+  .hero-botanical-left {
+    position: absolute;
+    left: -20px;
+    bottom: 60px;
+    width: 280px;
+    opacity: 0.12;
+    animation: sway 8s ease-in-out infinite;
+  }
+
+  .hero-botanical-right {
+    position: absolute;
+    right: -10px;
+    top: 40px;
+    width: 220px;
+    opacity: 0.1;
+    animation: sway 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-2deg) translateY(0); }
+    50% { transform: rotate(2deg) translateY(-10px); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 700px;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 24px;
+    animation: fadeUp 1.2s 0.2s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    animation: fadeUp 1.2s 0.3s ease both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--terracotta-light);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 300;
+    font-style: italic;
+    color: #c8bfb0;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    animation: fadeUp 1.2s 0.4s ease both;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    animation: fadeUp 1.2s 0.5s ease both;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .hero-meta-label {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--brown-light);
+  }
+
+  .hero-meta-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--warm-white);
+    letter-spacing: 0.02em;
+  }
+
+  .hero-divider {
+    width: 1px;
+    height: 40px;
+    background: #4a3f30;
+  }
+
+  .btn-register {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--terracotta);
+    color: var(--warm-white);
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 1.2s 0.6s ease both;
+  }
+
+  .btn-register::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--terracotta-light);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  .btn-register:hover::before { transform: translateX(0); }
+  .btn-register span { position: relative; z-index: 1; }
+
+  .hero-price-note {
+    margin-top: 16px;
+    font-size: 11px;
+    font-weight: 300;
+    color: #7a6a58;
+    letter-spacing: 0.1em;
+    animation: fadeUp 1.2s 0.7s ease both;
+  }
+
+  .hero-price-note strong {
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeUp 1.2s 1s ease both;
+  }
+
+  .scroll-hint span {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #5a4f40;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, #5a4f40, transparent);
+    animation: scrollDrop 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollDrop {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 40px; }
+
+  .container { max-width: 1000px; margin: 0 auto; }
+
+  .section-eyebrow {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    color: var(--brown-dark);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .section-title em { font-style: italic; color: var(--terracotta); }
+
+  .divider-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0;
+  }
+
+  .divider-line::before,
+  .divider-line::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  .divider-line-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* ─── ABOUT ─── */
+  .about {
+    background: var(--warm-white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--brown-mid);
+    margin-bottom: 20px;
+  }
+
+  .about-text p:last-child { margin-bottom: 0; }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 24px;
+    border: 0.5px solid var(--border);
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--sage);
+    transition: height 0.4s ease;
+  }
+
+  .feature-card:hover::before { height: 100%; }
+  .feature-card:hover { border-color: var(--sage-light); }
+
+  .feature-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .feature-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brown-dark);
+    margin-bottom: 6px;
+  }
+
+  .feature-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--brown-light);
+    line-height: 1.5;
+  }
+
+  /* ─── FOR WHOM ─── */
+  .for-whom {
+    background: var(--cream);
+  }
+
+  .for-whom-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .for-whom-item {
+    padding: 40px 32px;
+    background: var(--warm-white);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+
+  .for-whom-item:hover { background: #f0ece4; }
+
+  .for-whom-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 16px;
+    transition: color 0.3s ease;
+  }
+
+  .for-whom-item:hover .for-whom-number { color: var(--sage-light); }
+
+  .for-whom-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--brown-mid);
+    line-height: 1.5;
+  }
+
+  /* ─── PROGRAM ─── */
+  .program {
+    background: var(--brown-dark);
+    color: var(--warm-white);
+  }
+
+  .program .section-eyebrow { color: var(--sage-light); }
+  .program .section-title { color: var(--warm-white); }
+  .program .section-title em { color: var(--terracotta-light); }
+  .program .divider-line::before,
+  .program .divider-line::after { background: #3a2f22; }
+
+  .timeline {
+    margin-top: 48px;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 88px;
+    top: 0; bottom: 0;
+    width: 0.5px;
+    background: #3a2f22;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 0;
+    padding: 28px 0;
+    border-bottom: 0.5px solid #2a2018;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .timeline-item:last-child { border-bottom: none; }
+
+  .timeline-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--gold);
+    min-width: 70px;
+    padding-top: 2px;
+    text-align: right;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3a2f22;
+    border: 1px solid #5a4f40;
+    flex-shrink: 0;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .timeline-item:hover .timeline-dot {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+
+  .timeline-content { flex: 1; }
+
+  .timeline-label {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--warm-white);
+    margin-bottom: 4px;
+  }
+
+  .timeline-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: #7a6a58;
+    line-height: 1.5;
+  }
+
+  .timeline-break {
+    background: #1e1a12;
+    border-radius: 2px;
+  }
+
+  .timeline-break .timeline-title { color: var(--sage-light); font-style: italic; }
+
+  /* ─── SPEAKERS ─── */
+  .speakers {
+    background: var(--warm-white);
+  }
+
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .speaker-card {
+    padding: 40px;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+
+  .speaker-card:hover { background: #ede8df; }
+
+  .speaker-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 40px; right: 40px;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  .speaker-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .speaker-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--sage-light);
+    color: var(--brown-dark);
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .speaker-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--brown-dark);
+    margin-bottom: 6px;
+  }
+
+  .speaker-title {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--sage-dark);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .speaker-topic {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--brown-light);
+    line-height: 1.5;
+  }
+
+  .speaker-card.organizer {
+    background: var(--brown-dark);
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .speaker-card.organizer .speaker-number { color: #3a2f22; }
+  .speaker-card.organizer .speaker-name { color: var(--warm-white); }
+  .speaker-card.organizer .speaker-title { color: var(--sage-light); }
+  .speaker-card.organizer .speaker-topic { color: #9a8a78; }
+  .speaker-card.organizer .speaker-tag {
+    background: var(--terracotta);
+    color: var(--warm-white);
+  }
+  .speaker-card.organizer::after { display: none; }
+
+  .organizer-quote {
+    padding: 32px;
+    border-left: 2px solid var(--terracotta);
+  }
+
+  .organizer-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: #9a8a78;
+    line-height: 1.6;
+  }
+
+  /* ─── TICKETS ─── */
+  .tickets {
+    background: var(--cream);
+  }
+
+  .tickets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .ticket-card {
+    padding: 48px 40px;
+    background: var(--warm-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ticket-card.featured {
+    background: var(--brown-dark);
+  }
+
+  .ticket-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .ticket-card:not(.featured) .ticket-badge {
+    background: var(--border);
+    color: var(--brown-mid);
+  }
+
+  .ticket-card.featured .ticket-badge {
+    background: var(--terracotta);
+    color: var(--warm-white);
+  }
+
+  .ticket-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .ticket-card:not(.featured) .ticket-price { color: var(--brown-dark); }
+  .ticket-card.featured .ticket-price { color: var(--warm-white); }
+
+  .ticket-price sup {
+    font-size: 28px;
+    vertical-align: super;
+    margin-right: 4px;
+  }
+
+  .ticket-note {
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .ticket-card:not(.featured) .ticket-note { color: var(--brown-light); }
+  .ticket-card.featured .ticket-note { color: #7a6a58; }
+
+  .ticket-features {
+    list-style: none;
+    margin-bottom: 40px;
+  }
+
+  .ticket-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 0.5px solid;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  .ticket-card:not(.featured) .ticket-features li {
+    border-color: var(--border);
+    color: var(--brown-mid);
+  }
+
+  .ticket-card.featured .ticket-features li {
+    border-color: #2a2018;
+    color: #9a8a78;
+  }
+
+  .ticket-features li::before {
+    content: '—';
+    color: var(--gold);
+    font-size: 10px;
+    flex-shrink: 0;
+  }
+
+  .btn-ticket {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .ticket-card:not(.featured) .btn-ticket {
+    background: transparent;
+    border: 0.5px solid var(--border);
+    color: var(--brown-dark);
+  }
+
+  .ticket-card:not(.featured) .btn-ticket:hover {
+    background: var(--brown-dark);
+    color: var(--warm-white);
+    border-color: var(--brown-dark);
+  }
+
+  .ticket-card.featured .btn-ticket {
+    background: var(--terracotta);
+    color: var(--warm-white);
+  }
+
+  .ticket-card.featured .btn-ticket:hover {
+    background: var(--terracotta-light);
+  }
+
+  /* ─── FAQ ─── */
+  .faq {
+    background: var(--warm-white);
+  }
+
+  .faq-list {
+    margin-top: 48px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .faq-item {
+    border-bottom: 0.5px solid var(--border);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    cursor: pointer;
+    gap: 20px;
+  }
+
+  .faq-question-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--brown-dark);
+  }
+
+  .faq-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: 0.5px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--brown-light);
+    transition: all 0.3s ease;
+  }
+
+  .faq-item.open .faq-icon {
+    background: var(--brown-dark);
+    color: var(--warm-white);
+    border-color: var(--brown-dark);
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 300px;
+  }
+
+  .faq-answer-inner {
+    padding-bottom: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--brown-light);
+    line-height: 1.7;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--brown-dark);
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--warm-white);
+    margin-bottom: 8px;
+  }
+
+  .footer-tagline {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #5a4f40;
+    margin-bottom: 40px;
+  }
+
+  .footer-divider {
+    width: 60px;
+    height: 0.5px;
+    background: #3a2f22;
+    margin: 0 auto 32px;
+  }
+
+  .footer-info {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .footer-info-item {
+    text-align: center;
+  }
+
+  .footer-info-label {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #5a4f40;
+    margin-bottom: 4px;
+  }
+
+  .footer-info-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: #9a8a78;
+  }
+
+  .footer-cta {
+    display: inline-block;
+    padding: 14px 40px;
+    background: transparent;
+    border: 0.5px solid #3a2f22;
+    color: #7a6a58;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 48px;
+    cursor: pointer;
+  }
+
+  .footer-cta:hover {
+    border-color: var(--terracotta);
+    color: var(--terracotta-light);
+  }
+
+  .footer-copy {
+    font-size: 11px;
+    font-weight: 300;
+    color: #3a2f22;
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.4s ease, padding 0.4s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(46, 36, 24, 0.97);
+    padding: 14px 40px;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--warm-white);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #7a6a58;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--warm-white); }
+
+  .nav-cta {
+    padding: 9px 24px;
+    background: var(--terracotta);
+    color: var(--warm-white) !important;
+    transition: background 0.3s !important;
+  }
+
+  .nav-cta:hover { background: var(--terracotta-light); color: var(--warm-white) !important; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    section { padding: 70px 24px; }
+    nav { padding: 16px 24px; }
+    nav.scrolled { padding: 12px 24px; }
+    .nav-links { display: none; }
+
+    .about-grid,
+    .speakers-grid,
+    .tickets-grid { grid-template-columns: 1fr; }
+
+    .speaker-card.organizer { grid-column: 1; grid-template-columns: 1fr; }
+    .organizer-quote { border-left: none; border-top: 2px solid var(--terracotta); padding: 24px 0 0; }
+
+    .for-whom-list { grid-template-columns: 1fr; }
+    .about-features { grid-template-columns: 1fr; }
+
+    .timeline::before { left: 68px; }
+
+    .hero { padding: 100px 24px 60px; }
+    .hero-meta { gap: 20px; }
+    .footer-info { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Wellness Fest</a>
+  <ul class="nav-links">
+    <li><a href="#about">О фестивале</a></li>
+    <li><a href="#program">Программа</a></li>
+    <li><a href="#speakers">Спикеры</a></li>
+    <li><a href="#tickets">Билеты</a></li>
+    <li><a href="#tickets" class="nav-cta">Зарегистрироваться</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Eucalyptus branch left -->
+  <svg class="hero-botanical-left" viewBox="0 0 220 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Main stem -->
+    <path d="M110 460 C108 400 90 340 70 280 C50 220 30 160 40 100 C50 60 80 30 110 20" stroke="#a8c5a0" stroke-width="2" fill="none"/>
+    <!-- Eucalyptus leaves - pairs along stem -->
+    <ellipse cx="75" cy="270" rx="28" ry="14" transform="rotate(-35 75 270)" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a015"/>
+    <ellipse cx="115" cy="265" rx="26" ry="13" transform="rotate(20 115 265)" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a015"/>
+    <ellipse cx="62" cy="210" rx="30" ry="13" transform="rotate(-40 62 210)" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a015"/>
+    <ellipse cx="105" cy="200" rx="28" ry="12" transform="rotate(15 105 200)" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a015"/>
+    <ellipse cx="55" cy="155" rx="26" ry="12" transform="rotate(-45 55 155)" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a015"/>
+    <ellipse cx="95" cy="145" rx="24" ry="11" transform="rotate(10 95 145)" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a015"/>
+    <ellipse cx="62" cy="105" rx="22" ry="10" transform="rotate(-30 62 105)" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a015"/>
+    <ellipse cx="98" cy="95" rx="20" ry="10" transform="rotate(25 98 95)" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a015"/>
+    <ellipse cx="78" cy="58" rx="18" ry="9" transform="rotate(-20 78 58)" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a015"/>
+    <!-- Small berries -->
+    <circle cx="60" cy="130" r="4" stroke="#a8c5a0" stroke-width="0.8" fill="#a8c5a020"/>
+    <circle cx="68" cy="125" r="3" stroke="#a8c5a0" stroke-width="0.8" fill="#a8c5a020"/>
+    <circle cx="52" cy="126" r="3" stroke="#a8c5a0" stroke-width="0.8" fill="#a8c5a020"/>
+    <circle cx="100" cy="320" r="4" stroke="#a8c5a0" stroke-width="0.8" fill="#a8c5a020"/>
+    <circle cx="110" cy="315" r="3" stroke="#a8c5a0" stroke-width="0.8" fill="#a8c5a020"/>
+  </svg>
+
+  <!-- Peony right -->
+  <svg class="hero-botanical-right" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Stem -->
+    <path d="M120 310 C122 270 130 230 125 190 C120 160 110 140 120 100" stroke="#c4a0a8" stroke-width="1.5" fill="none"/>
+    <!-- Leaves on stem -->
+    <path d="M120 240 C120 240 80 225 65 200 C80 210 100 215 120 240Z" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a012"/>
+    <path d="M120 200 C120 200 160 185 175 162 C158 172 138 178 120 200Z" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a012"/>
+    <path d="M120 160 C120 160 85 148 72 128 C86 138 104 142 120 160Z" stroke="#a8c5a0" stroke-width="1" fill="#a8c5a012"/>
+    <!-- Peony bloom - layered petals -->
+    <path d="M120 95 C105 85 88 78 82 62 C80 50 90 35 105 38 C112 40 118 50 120 60 C122 50 128 40 135 38 C150 35 160 50 158 62 C152 78 135 85 120 95Z" stroke="#e8a0b0" stroke-width="1" fill="#e8a0b025"/>
+    <path d="M120 90 C108 82 95 76 90 62 C88 52 96 42 108 44 C114 46 118 54 120 62 C122 54 126 46 132 44 C144 42 152 52 150 62 C145 76 132 82 120 90Z" stroke="#d4849a" stroke-width="1" fill="#d4849a030"/>
+    <path d="M120 85 C110 78 100 73 96 62 C94 54 100 46 110 48 C115 50 118 57 120 63 C122 57 125 50 130 48 C140 46 146 54 144 62 C140 73 130 78 120 85Z" stroke="#c47088" stroke-width="1.2" fill="#c4708830"/>
+    <path d="M120 80 C112 74 105 69 102 60 C100 53 106 47 114 49 C117 50 119 56 120 62 C121 56 123 50 126 49 C134 47 140 53 138 60 C135 69 128 74 120 80Z" stroke="#b85878" stroke-width="1.2" fill="#b8587830"/>
+    <!-- Center -->
+    <circle cx="120" cy="65" r="8" stroke="#d4849a" stroke-width="1" fill="#f0c0d020"/>
+    <circle cx="120" cy="65" r="4" stroke="#c47088" stroke-width="0.8" fill="#e8a0b040"/>
+    <!-- Second smaller bud -->
+    <path d="M155 155 C148 148 140 144 138 136 C136 129 142 122 150 124 C153 125 155 130 156 135 C157 130 160 125 163 124 C171 122 177 129 175 136 C173 144 165 148 155 155Z" stroke="#e8a0b0" stroke-width="0.8" fill="#e8a0b018"/>
+    <path d="M155 152 C149 146 143 142 142 136 C140 130 145 124 152 126 C154 127 155 132 156 136 C157 132 158 127 160 126 C167 124 172 130 170 136 C169 142 163 146 155 152Z" stroke="#d4849a" stroke-width="0.8" fill="#d4849a020"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Нюрнберг · Германия</p>
+    <h1 class="hero-title">Wellness<br><em>Фестиваль</em></h1>
+    <p class="hero-subtitle">День для женщин о здоровье,<br>энергии и молодости изнутри</p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Дата</span>
+        <span class="hero-meta-value">26.07.2026</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Время</span>
+        <span class="hero-meta-value">11:00 — 17:00</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Место</span>
+        <span class="hero-meta-value">Нюрнберг</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Участниц</span>
+        <span class="hero-meta-value">до 70</span>
+      </div>
+    </div>
+
+    <a href="#tickets" class="btn-register"><span>Зарегистрироваться</span></a>
+    <p class="hero-price-note">Early bird <strong>25€</strong> · Осталось ограниченное количество мест</p>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Узнать больше</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <p class="section-eyebrow">О фестивале</p>
+    <h2 class="section-title">День который<br><em>изменит</em> всё</h2>
+
+    <div class="divider-line"><div class="divider-line-dot"></div></div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Это не конференция и не лекции. Это живой день для женщин которые хотят чувствовать себя энергичными, молодыми и в ресурсе.</p>
+        <p>Шесть часов с практикующими экспертами по превентивному здоровью, питанию, психологии и движению. Только то, что можно применить сразу.</p>
+        <p>Небольшой формат — до 70 участниц — чтобы было живое общение и настоящий нетворкинг.</p>
+      </div>
+
+      <div class="about-features">
+        <div class="feature-card">
+          <span class="feature-icon">🌿</span>
+          <div class="feature-title">4 эксперта</div>
+          <div class="feature-desc">Врач, психолог, нутрициолог и специалист по движению</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">✨</span>
+          <div class="feature-title">Дегустация</div>
+          <div class="feature-desc">Продукты для здоровья и красоты — попробуй и почувствуй</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">💬</span>
+          <div class="feature-title">Нетворкинг</div>
+          <div class="feature-desc">Познакомься с женщинами с теми же ценностями</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🎁</span>
+          <div class="feature-title">Подарки</div>
+          <div class="feature-desc">Розыгрыш призов и подарочный пакет каждой участнице</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="for-whom">
+  <div class="container">
+    <p class="section-eyebrow">Для кого</p>
+    <h2 class="section-title">Этот день <em>для тебя</em></h2>
+
+    <div class="for-whom-list">
+      <div class="for-whom-item">
+        <div class="for-whom-number">01</div>
+        <div class="for-whom-text">Если просыпаешься уставшей и хочешь вернуть настоящую энергию</div>
+      </div>
+      <div class="for-whom-item">
+        <div class="for-whom-number">02</div>
+        <div class="for-whom-text">Если хочешь выглядеть и чувствовать себя моложе своих лет</div>
+      </div>
+      <div class="for-whom-item">
+        <div class="for-whom-number">03</div>
+        <div class="for-whom-text">Если интересует превентивное здоровье и тема Longevity</div>
+      </div>
+      <div class="for-whom-item">
+        <div class="for-whom-number">04</div>
+        <div class="for-whom-text">Если ищешь единомышленниц и живое общение</div>
+      </div>
+      <div class="for-whom-item">
+        <div class="for-whom-number">05</div>
+        <div class="for-whom-text">Если хочешь конкретные инструменты, а не общие советы</div>
+      </div>
+      <div class="for-whom-item">
+        <div class="for-whom-number">06</div>
+        <div class="for-whom-text">Если готова инвестировать в себя и своё здоровье</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="program" id="program">
+  <div class="container">
+    <p class="section-eyebrow">Программа</p>
+    <h2 class="section-title">Как пройдёт<br><em>наш день</em></h2>
+
+    <div class="divider-line"><div class="divider-line-dot"></div></div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-time">11:00</span>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-label">Начало</div>
+          <div class="timeline-title">Регистрация и знакомство</div>
+          <div class="timeline-desc">Приветственный чай, вода Coralclub, нетворкинг</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-time">11:30</span>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-label">Открытие</div>
+          <div class="timeline-title">Почему мы здесь</div>
+          <div class="timeline-desc">Вступительное слово организатора</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-time">11:45</span>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-label">Спикер · Врач</div>
+          <div class="timeline-title">Превентивная медицина</div>
+          <div class="timeline-desc">Как не болеть и что проверять каждой женщине после 30</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-time">12:25</span>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-label">Спикер · Психолог</div>
+          <div class="timeline-title">Ресурсное состояние</div>
+          <div class="timeline-desc">Как жить без выгорания и управлять своей энергией</div>
+        </div>
+      </div>
+      <div class="timeline-item timeline-break">
+        <span class="timeline-time" style="color:#5a7048;">13:00</span>
+        <div class="timeline-dot" style="background:#2a3a1a; border-color:#3a5028;"></div>
+        <div class="timeline-content">
+          <div class="timeline-label" style="color:#5a7048;">Пауза 30 минут</div>
+          <div class="timeline-title">☕ Кофе · Общение · Дегустация</div>
+          <div class="timeline-desc" style="color:#4a5a3a;">Демо-стол Coralclub, нетворкинг, знакомство со спикерами</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-time">13:30</span>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-label">Спикер · Нутрициолог</div>
+          <div class="timeline-title">Питание и Longevity</div>
+          <div class="timeline-desc">Как стареть медленно и жить полно через питание и детокс</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-time">14:10</span>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-label">Спикер · [Тема]</div>
+          <div class="timeline-title">[Спикер 4]</div>
+          <div class="timeline-desc">[Тема выступления]</div>
+        </div>
+      </div>
+      <div class="timeline-item timeline-break">
+        <span class="timeline-time" style="color:#5a7048;">15:00</span>
+        <div class="timeline-dot" style="background:#2a3a1a; border-color:#3a5028;"></div>
+        <div class="timeline-content">
+          <div class="timeline-label" style="color:#5a7048;">Пауза 30 минут</div>
+          <div class="timeline-title">🍵 Перекус · Нетворкинг</div>
+          <div class="timeline-desc" style="color:#4a5a3a;">Столы по интересам, живое общение</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-time">15:30</span>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-label">Практика</div>
+          <div class="timeline-title">Движение в зале</div>
+          <div class="timeline-desc">Техники которые можно делать каждый день</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-time">16:10</span>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-label">Дискуссия</div>
+          <div class="timeline-title">Вопросы экспертам</div>
+          <div class="timeline-desc">Панельная дискуссия — задай свой вопрос</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-time">16:30</span>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-label">Финал</div>
+          <div class="timeline-title">🎁 Розыгрыш и общее фото</div>
+          <div class="timeline-desc">Подарки, воспоминания, до встречи в нашем комьюнити</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section class="speakers" id="speakers">
+  <div class="container">
+    <p class="section-eyebrow">Спикеры</p>
+    <h2 class="section-title">Эксперты<br>которым <em>доверяют</em></h2>
+
+    <div class="divider-line"><div class="divider-line-dot"></div></div>
+
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <div class="speaker-number">01</div>
+        <span class="speaker-tag">Медицина</span>
+        <div class="speaker-name">Марина Барон</div>
+        <div class="speaker-title">Врач · Превентивная медицина</div>
+        <div class="speaker-topic">«Как читать своё тело раньше чем появятся симптомы»</div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-number">02</div>
+        <span class="speaker-tag">Психология</span>
+        <div class="speaker-name">Инна Тринкеншу</div>
+        <div class="speaker-title">Психолог · Ресурсные состояния</div>
+        <div class="speaker-topic">«Как выйти из хронического стресса и вернуть радость жизни»</div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-number">03</div>
+        <span class="speaker-tag">[Тема]</span>
+        <div class="speaker-name">[Имя Фамилия]</div>
+        <div class="speaker-title">[Специальность]</div>
+        <div class="speaker-topic">«[Тема выступления]»</div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-number">04</div>
+        <span class="speaker-tag">[Тема]</span>
+        <div class="speaker-name">[Имя Фамилия]</div>
+        <div class="speaker-title">[Специальность]</div>
+        <div class="speaker-topic">«[Тема выступления]»</div>
+      </div>
+
+      <div class="speaker-card organizer">
+        <div>
+          <div class="speaker-number">05</div>
+          <span class="speaker-tag">Организатор</span>
+          <div class="speaker-name">Инна Тринкеншу</div>
+          <div class="speaker-title">Эксперт по питанию · Консультант Coralclub</div>
+          <div class="speaker-topic">«Longevity — как замедлить старение изнутри через питание и детокс»</div>
+        </div>
+        <div class="organizer-quote">
+          <blockquote>«Никто не придёт и не сделает тебя здоровой. Только ты сама отвечаешь за свою энергию. Этот фестиваль — для тех кто уже это понял.»</blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKETS -->
+<section class="tickets" id="tickets">
+  <div class="container">
+    <p class="section-eyebrow">Билеты</p>
+    <h2 class="section-title">Выбери <em>свой</em><br>вариант</h2>
+
+    <div class="divider-line"><div class="divider-line-dot"></div></div>
+
+    <div class="tickets-grid">
+      <div class="ticket-card">
+        <span class="ticket-badge">Стандарт</span>
+        <div class="ticket-price"><sup>€</sup>30</div>
+        <div class="ticket-note">Стандартная цена</div>
+        <ul class="ticket-features">
+          <li>Вход на все выступления</li>
+          <li>Здоровый обед и перекус</li>
+          <li>Дегустация продуктов</li>
+          <li>Подарочный пакет</li>
+          <li>Участие в розыгрыше</li>
+        </ul>
+        <button class="btn-ticket" onclick="alert('Регистрация скоро откроется!')">Зарегистрироваться</button>
+      </div>
+
+      <div class="ticket-card featured">
+        <span class="ticket-badge">🔥 Early Bird</span>
+        <div class="ticket-price"><sup>€</sup>25</div>
+        <div class="ticket-note">Только первые 20 мест</div>
+        <ul class="ticket-features">
+          <li>Вход на все выступления</li>
+          <li>Здоровый обед и перекус</li>
+          <li>Дегустация продуктов</li>
+          <li>Подарочный пакет</li>
+          <li>Участие в розыгрыше</li>
+        </ul>
+        <button class="btn-ticket" onclick="alert('Регистрация скоро откроется!')">Занять место</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <p class="section-eyebrow">Вопросы</p>
+    <h2 class="section-title">Часто <em>спрашивают</em></h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">На каком языке проходит мероприятие?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Мероприятие полностью на русском языке.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Нужна ли специальная подготовка?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Нет — приходи как есть. День создан для любого уровня знаний о здоровье. Всё объяснят с нуля, понятно и практично.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Что взять с собой?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Удобную одежду для практики движения, блокнот если хочешь записывать, и хорошее настроение 🌿 Всё остальное мы подготовим для тебя.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Можно ли вернуть билет?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Да — полный возврат за 7 и более дней до мероприятия. Если возникнут форс-мажорные обстоятельства — напиши нам, найдём решение.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Где будет проходить фестиваль?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">В Нюрнберге. Точный адрес зала будет отправлен всем зарегистрированным участницам за неделю до мероприятия.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Будут ли продаваться продукты Coralclub?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Да — во время пауз будет работать демо-стол с продуктами. Можно попробовать, задать вопросы и приобрести со специальной скидкой только для участниц фестиваля.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Wellness Фестиваль</div>
+  <div class="footer-tagline">Нюрнберг · Германия</div>
+  <div class="footer-divider"></div>
+
+  <div class="footer-info">
+    <div class="footer-info-item">
+      <div class="footer-info-label">Дата</div>
+      <div class="footer-info-value">26.07.2026</div>
+    </div>
+    <div class="footer-info-item">
+      <div class="footer-info-label">Время</div>
+      <div class="footer-info-value">11:00 — 17:00</div>
+    </div>
+    <div class="footer-info-item">
+      <div class="footer-info-label">Место</div>
+      <div class="footer-info-value">Нюрнберг</div>
+    </div>
+    <div class="footer-info-item">
+      <div class="footer-info-label">Билеты</div>
+      <div class="footer-info-value">от €25</div>
+    </div>
+  </div>
+
+  <button class="footer-cta" onclick="alert('Регистрация скоро откроется!')">Зарегистрироваться</button>
+
+  <div class="footer-copy">© 2025 Wellness Фестиваль Нюрнберг · Все права защищены</div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Fade in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feature-card, .speaker-card, .for-whom-item, .timeline-item, .ticket-card, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
