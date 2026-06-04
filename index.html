@@ -631,6 +631,22 @@
     align-items: center;
   }
 
+  .speaker-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 16px;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.speaker-card:hover .speaker-image {
+  transform: scale(1.06);
+}
+  
   .speaker-card.organizer .speaker-number { color: #3a2f22; }
   .speaker-card.organizer .speaker-name { color: var(--warm-white); }
   .speaker-card.organizer .speaker-title { color: var(--sage-light); }
@@ -1241,6 +1257,7 @@
 
     <div class="speakers-grid">
       <div class="speaker-card">
+          <img src="images/ella-sentschuk.jpg" alt="Элла Сенчук" class="speaker-image">
         <div class="speaker-number">01</div>
         <span class="speaker-tag">Медицина</span>
         <div class="speaker-name">Элла Сенчук</div>
